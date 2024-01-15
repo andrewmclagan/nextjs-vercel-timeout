@@ -1,12 +1,22 @@
+import { cache } from "react";
+
+const TIMEOUT_SECONDS = 5;
+
+const getTime = cache(async (): Promise<number> => {
+  await new Promise((resolve) =>
+    setTimeout(() => resolve(1), 5 * 1000)
+  );
+  return new Date().getTime();
+});
+
 export default async function SlowPage() {
-  const TIMEOUT_SECONDS = 10;
-  await new Promise((resolve) => setTimeout(resolve, TIMEOUT_SECONDS * 1000));
+  const timestamp = await getTime();
 
   return (
     <main>
       <h1>Slow page</h1>
       <p>
-        {new Date().toISOString()} in {TIMEOUT_SECONDS} seconds
+        {timestamp} in {TIMEOUT_SECONDS} seconds
       </p>
     </main>
   );
