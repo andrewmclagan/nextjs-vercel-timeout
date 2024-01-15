@@ -1,27 +1,20 @@
-import Image from "next/image";
-import { v4 as uuidv4 } from "uuid";
+import Link from "next/link";
 
 export default async function Home() {
-  const TIMEOUT_SECONDS = 120;
-  await new Promise((resolve) => setTimeout(resolve, TIMEOUT_SECONDS * 1000));
-
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="relative flex place-items-center">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+    <main>
+      <div>
+        <h1>Vercel fallback timeout</h1>
       </div>
-      <div className="relative flex place-items-center">
-        <p>{new Date().toISOString()}</p>
-      </div>
-      <div className="relative flex place-items-center">
-        <p>{uuidv4()}</p>
+      <div>
+        <ul>
+          <li>
+            <Link href="/fallback-to-slow">fallback-to-slow-page</Link>
+          </li>
+          <li>
+            <Link href="/slow-page">slow-page</Link>
+          </li>
+        </ul>
       </div>
     </main>
   );

@@ -8,8 +8,7 @@ const nextConfig = {
       fallback: [
         {
           source: "/fallback-to-slow",
-          // destination: `${process.env.LEARN_APP_FALLBACK_URI}/:path*`,
-          destination: `http://localhost:3000`,
+          destination: `/slow-page`,
         },
       ],
       beforeFiles: [],
