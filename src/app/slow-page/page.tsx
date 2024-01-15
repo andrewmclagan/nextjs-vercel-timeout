@@ -1,6 +1,6 @@
 import { cache } from "react";
 
-const TIMEOUT_SECONDS = 5;
+const TIMEOUT_SECONDS = 45;
 
 export const dynamic = "force-dynamic";
 
