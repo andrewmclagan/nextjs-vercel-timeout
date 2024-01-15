@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { v4 as uuidv4 } from "uuid";
 
-export default async function Home() {
+export default async function SlowPage() {
   const TIMEOUT_SECONDS = 120;
   await new Promise((resolve) => setTimeout(resolve, TIMEOUT_SECONDS * 1000));
 
@@ -18,7 +18,7 @@ export default async function Home() {
         />
       </div>
       <div className="relative flex place-items-center">
-        <p>{new Date().toISOString()}</p>
+        <p>{new Date().toISOString()} in {TIMEOUT_SECONDS} seconds</p>
       </div>
       <div className="relative flex place-items-center">
         <p>{uuidv4()}</p>
