@@ -8,7 +8,7 @@ const nextConfig = {
       fallback: [
         {
           source: "/:path*",
-          destination: `https://nextjs-vercel-timeout.vercel.app/slow-page`,
+          destination: `https://nextjs-vercel-timeout.vercel.app/:path*`,
         },
       ],
       beforeFiles: [],
